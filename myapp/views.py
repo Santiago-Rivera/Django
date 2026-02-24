@@ -1,9 +1,12 @@
 from django.http import HttpResponse
 
 # Create your views here.
+def index(request):
+    return HttpResponse("Index page")
 
-def hello_world(request):
-    return HttpResponse("<h1>Hello, World!</h1>")
+def hello_world(request, id):
+    print(id)
+    return HttpResponse("<h1>Hello %s</h1>" % id)
 
 def about(request):
-    return HttpResponse("<h2>About Page</h2><p>This is the about page of our Django application.</p>")
+    return HttpResponse("<h2>About Page</h2>")
