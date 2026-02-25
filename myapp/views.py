@@ -29,4 +29,7 @@ def projects(request):
 
 def tasks(request):
     #task = Task.objects.get(title=title)
-    return render(request, 'tasks.html')
+    tasks = Task.objects.all()
+    return render(request, 'tasks.html', {
+        'tasks': tasks
+    })
